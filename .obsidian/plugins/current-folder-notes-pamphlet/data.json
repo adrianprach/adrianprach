@@ -1,0 +1,12 @@
+{
+  "excludeTitlesFilter": "_index",
+  "includeTitleFilter": "",
+  "prettyTitleCase": false,
+  "includeSubfolderNotes": false,
+  "includeCurrentFileOutline": true,
+  "includeListFileOutlines": false,
+  "styleMode": "minimal",
+  "showNavigation": false,
+  "biggerText": false,
+  "biggerTextMobileOnly": false
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='white'/><text x='4' y='22' font-size='14'>សិទ្ធិ</text></svg>">
+  <script src="/main.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <button onclick="switchTheme()" id="theme-switcher">☀️</button>
+</header>
+{{ content }}
+{{ function renderSection(pages = []) }}
+  {{ if pages.length == 0 }}
+  <p>Nothing here...</p>
+  {{ /if }}
+  <ul>
+  {{ for page of pages.sort((a, b) => {
+      if (b.pinned || false) return 1;
+      if (a.pinned || false) return -1;
+      return new Date(b.date) - new Date(a.date);
+    }) }}
+    <li>
+      <a class="flex" href="{{ page.url }}"><span>{{ page.title || page.basename }}</span> <span>{{ page.date?.toLocaleDateString() || "Not defined"}} </span></a>
+    </li>
+  {{ /for }}
+  </ul>
+{{ /function }}
+
+  <section>
+    <strong>Posts</strong>
+    {{ renderSection(search.pages("type='post'")) }}
+  </section>
+
+<footer>
+  <hr />
+  <small>
+   {{G.index_footer}}
+  <aside>
+    <a href="{{G.mail}}"> Mail </a> |
+    <a href="{{G.github}}" target="_blank">Github</a> |
+    <a href="{{G.x}}" target="_blank">X</a>
+  </aside>
+  </small>
+</footer>
+</body>
+</html>

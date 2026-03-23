@@ -1,0 +1,160 @@
+:root {
+    --background: white;
+    --color: 76, 99, 119;
+    --blockquote-color: 76, 99, 119;
+    --text: #000304;
+
+    --background-dark: #000304;
+    --blockquote-color-dark: 76, 99, 119;
+    --color-dark: #95c9ff;
+    --text-dark: #95c9ff;
+
+    --font: "Doto", sans-serif;
+    --font-variation-settings: "ROND" 0;
+    --font-size-header: 2em;
+    --font-size: 1.5em;
+    --font-weight: 500;
+}
+
+html {
+    font-size: var(--font-size);
+    padding: 5vh 5vw;
+    line-height: 1.4;
+    color: var(--text);
+    font-family: var(--font);
+    font-variation-settings: var(--font-variation-settings);
+    font-weight: var(--font-weight);
+    font-style: normal;
+    word-wrap: break-word;
+    word-break: break-word;
+    background: var(--background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /*line-height: 1.1;*/
+    font-weight: var(--font-weight);
+    font-size: var(--font-size-header);
+    font-style: normal;
+    font-family: var(--font);
+    font-variation-settings: var(--font-variation-settings);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
+    color: rgba(var(--color), 0.9);
+}
+
+a,
+hr,
+strong {
+    color: rgba(var(--color), 1);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    background: rgba(var(--color), 0.2);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+code:not(pre code) {
+    background: rgba(var(--color), 0.1);
+}
+
+blockquote,
+pre {
+    background: rgba(var(--blockquote-color), 0.2);
+    padding: 0.5em 0.5em;
+    margin-left: 0;
+    margin-right: 0;
+    text-wrap: balance;
+}
+
+blockquote {
+    border-left: 4px solid rgba(var(--color), 0.6);
+    font-style: italic;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    margin-top: 0px;
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+li::marker {
+    content: "* ";
+    color: rgba(var(--color), 1);
+}
+
+table {
+    text-align: justify;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+td,
+th {
+    padding: 0.5em;
+    border-bottom: 1px solid rgba(var(--color), 0.2);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--background);
+    padding: 8px 0;
+}
+
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+@media (width >= 80rem) {
+    html {
+        font-size: 1.2em;
+        padding: 10vh 25vw;
+    }
+
+    ol,
+    li {
+        margin-left: -0.5em;
+    }
+
+    footer {
+        text-align: left;
+    }
+
+    aside {
+        float: right;
+    }
+}

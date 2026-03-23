@@ -1,0 +1,14 @@
+{
+  "vimMode": true,
+  "showLineNumber": true,
+  "attachmentFolderPath": "assets",
+  "userIgnoreFilters": [
+    "_site/",
+    "_includes/"
+  ],
+  "newLinkFormat": "absolute",
+  "showUnsupportedFiles": false,
+  "useMarkdownLinks": true,
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
+}
