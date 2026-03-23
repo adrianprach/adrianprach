@@ -4,4 +4,4 @@ layout: index.vto
 ---
 
 > adrian, broset  
-> atm: studies mcs
+> atm: studies MCS @ flinders 
