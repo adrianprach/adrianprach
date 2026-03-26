@@ -1,41 +1,36 @@
-const loadDarkMode = () => {
+const getSystemTheme = () =>
+  window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+const setThemeButton = (effectiveTheme) => {
   const themeSwitcherBtn = document.getElementById("theme-switcher");
-  themeSwitcherBtn.innerHTML = "☀️";
-  document.documentElement.style.setProperty("--background", "var(--background-dark)");
-  document.documentElement.style.setProperty("--text", "var(--text-dark)");
-  document.documentElement.style.setProperty("--color", "var(--color-dark)");
-  document.documentElement.style.setProperty("--blockquote-color", "var(--blockquote-color-dark)");
+  if (!themeSwitcherBtn) return;
+  themeSwitcherBtn.innerHTML = effectiveTheme === "dark" ? "☀️" : "🌙";
 };
 
-const loadLightMode = () => {
-  const themeSwitcherBtn = document.getElementById("theme-switcher");
-  themeSwitcherBtn.innerHTML = "🌙";
-  document.documentElement.style.removeProperty("--background");
-  document.documentElement.style.removeProperty("--text");
-  document.documentElement.style.removeProperty("--color");
-  document.documentElement.style.removeProperty("--blockquote-color");
+const applyTheme = (theme) => {
+  if (theme === "dark" || theme === "light") {
+    document.documentElement.dataset.theme = theme;
+    setThemeButton(theme);
+    return;
+  }
+
+  // "system" (or unset): let CSS `prefers-color-scheme` decide
+  delete document.documentElement.dataset.theme;
+  setThemeButton(getSystemTheme());
 };
 
 const switchTheme = () => {
-  const theme = localStorage.getItem("theme");
-  if (theme === "light") {
-    loadDarkMode();
-    localStorage.setItem("theme", "dark");
-  } else {
-    loadLightMode();
-    localStorage.setItem("theme", "light");
-  }
+  const stored = localStorage.getItem("theme"); // "light" | "dark" | null
+  const effective = stored === "light" || stored === "dark" ? stored : getSystemTheme();
+  const next = effective === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", next);
+  applyTheme(next);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
-  const isLightMode = localStorage.getItem("theme") === "light";
-
-  if (isLightMode) {
-    loadLightMode();
-  } else {
-    loadDarkMode();
-  }
+  const stored = localStorage.getItem("theme"); // "light" | "dark" | null
+  applyTheme(stored);
 
   if (params.has("q") && params.get("q") === "1") {
     sessionStorage.setItem("hidden", "0");

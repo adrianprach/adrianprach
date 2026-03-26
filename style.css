@@ -11,15 +11,16 @@
 
     --font: "Doto", sans-serif;
     --font-variation-settings: "ROND" 0;
-    --font-size-header: 2em;
-    --font-size: 1.5em;
+    /* Keep typography comfortable on mobile while still scaling up on desktop */
+    --font-size: clamp(24px, 6.8vw, 36px);
+    --font-size-header: clamp(2.5rem, 8.4vw, 3.4rem);
     --font-weight: 500;
 }
 
 html {
     font-size: var(--font-size);
     padding: 5vh 5vw;
-    line-height: 1.4;
+    line-height: 1.65;
     color: var(--text);
     font-family: var(--font);
     font-variation-settings: var(--font-variation-settings);
@@ -62,9 +63,42 @@ a:hover {
     background: rgba(var(--color), 0.2);
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: var(--background-dark);
+        --text: var(--text-dark);
+        --color: var(--color-dark);
+        --blockquote-color: var(--blockquote-color-dark);
+    }
+
+    a:hover {
+        background: rgba(var(--color), 0.28);
+    }
+}
+
+:root[data-theme="dark"] {
+    --background: var(--background-dark);
+    --text: var(--text-dark);
+    --color: var(--color-dark);
+    --blockquote-color: var(--blockquote-color-dark);
+}
+
+:root[data-theme="dark"] a:hover {
+    background: rgba(var(--color), 0.28);
+}
+
+:root[data-theme="light"] {
+    --background: white;
+    --text: #000304;
+    --color: 76, 99, 119;
+    --blockquote-color: 76, 99, 119;
+}
+
 .flex {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
 }
 
 code:not(pre code) {
@@ -141,7 +175,7 @@ button {
 
 @media (width >= 80rem) {
     html {
-        font-size: 1.2em;
+        font-size: clamp(22px, 1.6vw, 26px);
         padding: 10vh 25vw;
     }
 
