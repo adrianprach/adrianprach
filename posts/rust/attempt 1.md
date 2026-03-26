@@ -1,10 +1,11 @@
 ---
-title: rust, attempt 1
+title: intro to rust
 pinned: false
 tags: 
 draft: false
 category: rust
 type: post
+date: 2025-03-24
 ---
 > Just dumping it here by hand so I can learn, 99% content here taken from links below:
 

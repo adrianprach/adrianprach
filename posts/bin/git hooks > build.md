@@ -3,7 +3,7 @@ title: git hooks > build
 pinned: false
 tags:
   - git
-draft: false
+draft: true
 category: post
 type: post
 date:

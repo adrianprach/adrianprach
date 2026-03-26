@@ -1,19 +1,27 @@
 :root {
-    --background: white;
+    --background-light: #f7f8fb;
+    --background: var(--background-light);
     --color: 76, 99, 119;
     --blockquote-color: 76, 99, 119;
     --text: #000304;
 
     --background-dark: #000304;
     --blockquote-color-dark: 76, 99, 119;
-    --color-dark: #95c9ff;
+
+    --color-dark: 149, 201, 255;
     --text-dark: #95c9ff;
 
     --font: "Doto", sans-serif;
+    --mono-font: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --font-variation-settings: "ROND" 0;
-    /* Keep typography comfortable on mobile while still scaling up on desktop */
     --font-size: clamp(24px, 6.8vw, 36px);
     --font-size-header: clamp(2.5rem, 8.4vw, 3.4rem);
+    --link-hover-alpha: 0.28;
+    --code-hover-alpha: 0.2;
+    --pre-hover-alpha: 0.2;
+    --link-hover-alpha-dark: 0.26;
+    --code-hover-alpha-dark: 0.22;
+    --pre-hover-alpha-dark: 0.14;
     --font-weight: 500;
 }
 
@@ -37,9 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-    /*line-height: 1.1;*/
     font-weight: var(--font-weight);
-    font-size: var(--font-size-header);
     font-style: normal;
     font-family: var(--font);
     font-variation-settings: var(--font-variation-settings);
@@ -59,8 +65,24 @@ a {
     text-decoration: none;
 }
 
+.theme-dark {
+    --link-hover-alpha: var(--link-hover-alpha-dark);
+    --code-hover-alpha: var(--code-hover-alpha-dark);
+    --pre-hover-alpha: var(--pre-hover-alpha-dark);
+}
+
 a:hover {
-    background: rgba(var(--color), 0.2);
+    background: rgba(var(--color), var(--link-hover-alpha));
+}
+
+code:not(pre code):hover,
+code:not(pre code):focus-visible {
+    background: rgba(var(--color), var(--code-hover-alpha));
+}
+
+pre:hover,
+pre:focus-within {
+    background: rgba(var(--color), var(--pre-hover-alpha));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,29 +91,11 @@ a:hover {
         --text: var(--text-dark);
         --color: var(--color-dark);
         --blockquote-color: var(--blockquote-color-dark);
+
+        --link-hover-alpha: var(--link-hover-alpha-dark);
+        --code-hover-alpha: var(--code-hover-alpha-dark);
+        --pre-hover-alpha: var(--pre-hover-alpha-dark);
     }
-
-    a:hover {
-        background: rgba(var(--color), 0.28);
-    }
-}
-
-:root[data-theme="dark"] {
-    --background: var(--background-dark);
-    --text: var(--text-dark);
-    --color: var(--color-dark);
-    --blockquote-color: var(--blockquote-color-dark);
-}
-
-:root[data-theme="dark"] a:hover {
-    background: rgba(var(--color), 0.28);
-}
-
-:root[data-theme="light"] {
-    --background: white;
-    --text: #000304;
-    --color: 76, 99, 119;
-    --blockquote-color: 76, 99, 119;
 }
 
 .flex {
@@ -105,6 +109,13 @@ code:not(pre code) {
     background: rgba(var(--color), 0.1);
 }
 
+code:not(pre code),
+pre,
+pre code {
+    font-family: var(--mono-font);
+    font-size: 0.95em;
+}
+
 blockquote,
 pre {
     background: rgba(var(--blockquote-color), 0.2);
@@ -112,6 +123,12 @@ pre {
     margin-left: 0;
     margin-right: 0;
     text-wrap: balance;
+}
+
+pre,
+pre code {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 blockquote {
@@ -143,6 +160,10 @@ li::marker {
     color: rgba(var(--color), 1);
 }
 
+ol {
+    margin-left: 1.25em;
+}
+
 table {
     text-align: justify;
     width: 100%;
@@ -172,14 +193,26 @@ button {
     padding: 0;
 }
 
-
 @media (width >= 80rem) {
     html {
         font-size: clamp(22px, 1.6vw, 26px);
         padding: 10vh 25vw;
     }
 
-    ol,
+    :root {
+        --font-size-header: clamp(1rem, 2.2vw, 1rem);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
     li {
         margin-left: -0.5em;
     }
@@ -192,3 +225,4 @@ button {
         float: right;
     }
 }
+

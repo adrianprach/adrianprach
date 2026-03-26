@@ -4,7 +4,8 @@
       "src": "deno.json",
       "use": "@vercel/static-build",
       "config": {
-        "buildCommand": "deno task build"
+        "buildCommand": "deno task build",
+        "distDir": "_site"
       }
     }
   ]
