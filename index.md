@@ -3,7 +3,7 @@ title: itsadrian
 layout: index.vto
 ---
 
-> adrian, broset, nonwiz, blubu  
+> adrian, broset  
 > atm: studying MCS @ flinders 
 
 ---

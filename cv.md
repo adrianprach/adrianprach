@@ -56,37 +56,35 @@ ESP32 prototype for easing traffic congestion. Built with Micropython, MQTT, and
 ## Work Experience
 ---
 
-**[Software Engineer @ AlpegaTMS](https://www.alpegagroup.com/en/)** - Thailand, 2022 — Present. 
+**[Software Engineer @ AlpegaTMS](https://www.alpegagroup.com/en/)** - Thailand, 2022 - February 2026. 
 
-- Agile team member for TMS cloud platform
-- Develops solutions for complex logistics needs
-- Refactors existing code for technical excellence
+- Delivered consistent feature enhancements, bug fixes, and system improvements across multiple global client environments for a leading SaaS Transportation Management System (TMS), ensuring high reliability and client satisfaction.  
+- Developed and maintained full-stack modules: Angular/TypeScript frontend (with legacy JSF/JSP/jQuery), Java/Spring backend services, REST APIs, EDI integrations, Oracle PL/SQL performance tuning, and Flyway migrations.  
+- Extended carrier and load management capabilities—including transport order processing, shipment tracking, route optimisation, and workflow/UI improvements—while upholding code quality through JUnit testing, SonarQube compliance, peer reviews, and Agile collaboration.  
 
 **[Project Consultant @ MORU Tropical Health Network](https://www.tropmedres.ac)** - Thailand, 2023 — April 2025. 
 
-- Develops a web app for dynamic form submission and review
-- Manages MDM controls over hundreds of tablets
+- Developed Next.js app for multi-role funding proposal management, including feedback and budget tracking.  
+- Managed ~300 tablets via IBM MaaS360 for deployment, installation, and remote debugging.  
 
 **[Technical Assistant @ Asia-Pacific International University](http://www.apiu.edu)** - Thailand, 2018 — 2022. 
 
-- Maintained and improved the university website
-- Provided tech support for faculty and students
-- Helped implement e-learning solutions during COVID-19
-- Developed tools for university operations
-
+- Maintained university website and provided technical support to staff/students.  
+- Assisted in e-learning solutions during COVID-19 for remote teaching.  
 
 ## Volunteering
 ---
 
-**[Software Developer @ Bibleway](https://bibleway.de/)** - Germany, 2022 — Present. 
-- Maintains WordPress platform
-- Manages global pages, posts, and plugins
-- Troubleshoots plugin conflicts
-- Develops standalone Next.js + Firebase solutions
+**[Web Administrator & Developer @ Bibleway](https://bibleway.de/)** - Germany, 2022 — Present. 
 
+- Maintained WordPress site with Elegant Themes (Divi) for layouts, plugins, and responsive updates.
+- Led migration to Astro CMS for improved performance and maintainability.
+- Built RBTI health analytics app for patient data visualization and implemented multilingual support (i18n).
 
 ## Education
 ---
+
+**[Master of Computer Science](flinders.edu.au)** - *Flinders University*, 2026 - Present.
 
 **[Minoring in Bioscience](https://apiu.edu)** - *Asia-Pacific International University*, 2021 — 2022.  
 Relevant Coursework: General Bio I & II, Community Gardening, Calculus I & II, General Physics
