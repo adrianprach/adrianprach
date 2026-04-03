@@ -13,3 +13,5 @@ date: 2025-03-17
 5. [Obsidian](https://obsidian.md/): note taking app with tons of available plugins.
 6. [Ghostty](https://ghostty.org/): terminal emulator
 7. [Zen](https://zen-browser.app/): firefox-based browser
+8. OmniDiskSweeper
+9. Aerospace
