@@ -1,6 +1,6 @@
 ---
-title: "cmux: unified workflow"
-pinned: false
+title: "cmux: browsing and notification workflow"
+pinned: true
 tags:
   - cli
   - cmux
@@ -11,7 +11,7 @@ date: 2026-04-19
 ---
 TIL:  using basic [cmux](https://cmux.com/) for terminal browsing, quick query, and notification.
 - `cmo`: open file as cmux browser
-- `cmf`: open current directory as fzf and open selected file in cmux browser
+- `cmf`: open current directory as fzf and open selected file in cmux browser (required fzf)
 - `cmg`: quick search stuff with cmux browser, f.g `cmg "who is my laplace demon?`
 - `cmn`: easily add notification using `|` after each command, f.g  `ping -c 5 google.com | tail -n 2 | cmn "pinging done!"`
 ## gist
