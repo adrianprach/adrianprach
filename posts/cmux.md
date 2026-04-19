@@ -4,7 +4,7 @@ pinned: false
 tags:
   - cli
   - cmux
-draft: true
+draft: false
 category: post
 type: post
 date: 2026-04-19
