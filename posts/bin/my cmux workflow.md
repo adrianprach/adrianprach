@@ -1,5 +1,5 @@
 ---
-title: "cmux: browsing and notification workflow"
+title: my cmux workflow
 pinned: true
 tags:
   - cli
