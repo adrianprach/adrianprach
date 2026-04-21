@@ -4,6 +4,6 @@ layout: index.vto
 ---
 
 > adrian, broset  
-> atm:  recompiling... 0 errors, 1 warning: reverting to student mode.
+> currently stuck back in the student world line @ flinders
 
 ---
