@@ -4,6 +4,6 @@ layout: index.vto
 ---
 
 > adrian, broset  
-> atm: studying MCS @ flinders 
+> atm:  recompiling... 0 errors, 1 warning: reverting to student mode.
 
 ---
