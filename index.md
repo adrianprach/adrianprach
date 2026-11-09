@@ -12,6 +12,4 @@ around that: consultant at [MORU](https://www.tropmedres.ac) (funding tools plat
 
 before adelaide: thailand, university IT, a bioscience minor i still can’t fully explain at parties.
 
-this site is a lume + deno garden. short notes when they’re useful. homework and half-finished vim tips stay in draft, where they can’t hurt anyone.
-
 [cv](/cv) · [projects](/projects)

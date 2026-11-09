@@ -201,7 +201,7 @@ button {
 
 @media (width >= 64rem) {
     html {
-        font-size: clamp(15px, 0.95vw, 16px);
+        font-size: clamp(18px, 1.2vw, 19px);
         padding: 10vh 22vw;
     }
 
