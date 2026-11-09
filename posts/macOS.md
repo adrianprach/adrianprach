@@ -3,6 +3,7 @@ pinned: false
 title: macOS bookmarks
 tags:
   - bookmark
+draft: true
 date: 2025-03-17
 ---
 

@@ -2,6 +2,7 @@
 title: windows bookmarks
 tags:
   - bookmark
+draft: true
 date: 2025-03-01
 ---
 - [Komorebi](https://github.com/LGUG2Z/komorebi): tiling window manager

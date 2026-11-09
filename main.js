@@ -4,7 +4,7 @@ const getSystemTheme = () =>
 const setThemeButton = (effectiveTheme) => {
   const themeSwitcherBtn = document.getElementById("theme-switcher");
   if (!themeSwitcherBtn) return;
-  themeSwitcherBtn.innerHTML = effectiveTheme === "dark" ? "☀️" : "🌙";
+  themeSwitcherBtn.textContent = effectiveTheme === "dark" ? "[*]" : "[o]";
 };
 
 const setThemeVars = (theme) => {
@@ -22,9 +22,9 @@ const setThemeVars = (theme) => {
 
   if (theme === "light") {
     root.style.setProperty("--background", "var(--background-light)");
-    root.style.setProperty("--text", "#000304");
-    root.style.setProperty("--color", "76, 99, 119");
-    root.style.setProperty("--blockquote-color", "76, 99, 119");
+    root.style.setProperty("--text", "#111111");
+    root.style.setProperty("--color", "10, 70, 120");
+    root.style.setProperty("--blockquote-color", "10, 70, 120");
     root.classList.add("theme-light");
     root.classList.remove("theme-dark");
     return;

@@ -2,7 +2,7 @@
 title: intro to rust
 pinned: false
 tags: 
-draft: false
+draft: true
 category: rust
 type: post
 date: 2025-03-24

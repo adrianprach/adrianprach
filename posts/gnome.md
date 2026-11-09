@@ -6,7 +6,7 @@ tags:
   - bookmark
   - app-idea
 pinned: false
-draft: false
+draft: true
 category: post
 ---
 * [Sound Input & Output Chooser](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)

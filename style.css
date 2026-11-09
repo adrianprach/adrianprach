@@ -1,9 +1,10 @@
 :root {
-    --background-light: #f7f8fb;
+    --background-light: #fafafa;
     --background: var(--background-light);
-    --color: 76, 99, 119;
-    --blockquote-color: 76, 99, 119;
-    --text: #000304;
+    /* ink blue — clearer than slate on light bg */
+    --color: 10, 70, 120;
+    --blockquote-color: 10, 70, 120;
+    --text: #111111;
 
     --background-dark: #000304;
     --blockquote-color-dark: 76, 99, 119;
@@ -14,15 +15,15 @@
     --font: "Doto", sans-serif;
     --mono-font: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --font-variation-settings: "ROND" 0;
-    --font-size: clamp(24px, 6.8vw, 36px);
+    --font-size: clamp(16px, 4.2vw, 20px);
     --font-size-header: clamp(2.5rem, 8.4vw, 3.4rem);
-    --link-hover-alpha: 0.28;
-    --code-hover-alpha: 0.2;
-    --pre-hover-alpha: 0.2;
+    --link-hover-alpha: 0.12;
+    --code-hover-alpha: 0.1;
+    --pre-hover-alpha: 0.1;
     --link-hover-alpha-dark: 0.26;
     --code-hover-alpha-dark: 0.22;
     --pre-hover-alpha-dark: 0.14;
-    --font-weight: 500;
+    --font-weight: 700;
 }
 
 html {
@@ -52,13 +53,16 @@ h6 {
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     overflow-wrap: break-word;
-    color: rgba(var(--color), 0.9);
+    color: var(--text);
 }
 
 a,
-hr,
-strong {
+hr {
     color: rgba(var(--color), 1);
+}
+
+strong {
+    color: var(--text);
 }
 
 a {
@@ -133,7 +137,7 @@ pre code {
 }
 
 blockquote {
-    border-left: 4px solid rgba(var(--color), 0.6);
+    border-left: 4px solid rgba(var(--color), 0.85);
     font-style: italic;
 }
 
@@ -190,14 +194,15 @@ button {
     background: none;
     border: none;
     font: inherit;
+    color: inherit;
     cursor: pointer;
     padding: 0;
 }
 
-@media (width >= 80rem) {
+@media (width >= 64rem) {
     html {
-        font-size: clamp(22px, 1.6vw, 26px);
-        padding: 10vh 25vw;
+        font-size: clamp(15px, 0.95vw, 16px);
+        padding: 10vh 22vw;
     }
 
     :root {

@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-    <button onclick="switchTheme()" id="theme-switcher">☀️</button>
+    <button onclick="switchTheme()" id="theme-switcher" type="button" aria-label="Toggle theme">[*]</button>
 </header>
 {{ content }}
 {{ function renderSection(pages = []) }}
@@ -24,15 +24,15 @@
       return new Date(b.date) - new Date(a.date);
     }) }}
     <li>
-      <a class="flex" href="{{ page.url }}"><span>{{ page.title || page.basename }}</span> <span>{{ page.date?.toLocaleDateString() || "Not defined"}} </span></a>
+      <a class="flex" href="{{ page.url }}"><span>{{ page.title || page.basename }}</span> <span>{{ page.date?.toLocaleDateString() || "" }} </span></a>
     </li>
   {{ /for }}
   </ul>
 {{ /function }}
 
   <section>
-    <strong>logs</strong>
-    {{ renderSection(search.pages("type='post'")) }}
+    <strong>notes</strong>
+    {{ renderSection(search.pages("type=post draft!=true")) }}
   </section>
 
 <footer>
