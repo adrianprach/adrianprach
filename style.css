@@ -15,8 +15,9 @@
     --font: "Doto", sans-serif;
     --mono-font: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --font-variation-settings: "ROND" 0;
-    --font-size: clamp(16px, 4.2vw, 20px);
-    --font-size-header: clamp(2.5rem, 8.4vw, 3.4rem);
+    /* mobile-first: fixed px so phones don't inherit desktop-width scaling */
+    --font-size: 16px;
+    --font-size-header: 1.5rem;
     --link-hover-alpha: 0.12;
     --code-hover-alpha: 0.1;
     --pre-hover-alpha: 0.1;
@@ -28,7 +29,7 @@
 
 html {
     font-size: var(--font-size);
-    padding: 5vh 5vw;
+    padding: 1.25rem 1rem;
     line-height: 1.65;
     color: var(--text);
     font-family: var(--font);
@@ -38,6 +39,8 @@ html {
     word-wrap: break-word;
     word-break: break-word;
     background: var(--background);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 h1,
@@ -50,6 +53,7 @@ h6 {
     font-style: normal;
     font-family: var(--font);
     font-variation-settings: var(--font-variation-settings);
+    font-size: var(--font-size-header);
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     overflow-wrap: break-word;
@@ -172,8 +176,12 @@ ol {
 table {
     text-align: justify;
     width: 100%;
+    max-width: 100%;
     border-collapse: collapse;
     margin-bottom: 1em;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 td,
@@ -199,6 +207,7 @@ button {
     padding: 0;
 }
 
+/* desktop reading column — unchanged */
 @media (width >= 64rem) {
     html {
         font-size: clamp(18px, 1.2vw, 19px);
@@ -206,7 +215,7 @@ button {
     }
 
     :root {
-        --font-size-header: clamp(1rem, 2.2vw, 1rem);
+        --font-size-header: 1rem;
     }
 
     h1,
