@@ -4,7 +4,7 @@ layout: index.vto
 ---
 
 > adrian, broset  
-> playing poe2 and sfv
+> used to ship software for money. now shipping assignments @ flinders.
 
 software engineer for a few years on [alpega](https://www.alpegagroup.com/en/)’s tms — angular, java, spring, oracle. Also the kind of stack where “legacy” is not a metaphor.
 

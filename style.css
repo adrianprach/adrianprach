@@ -15,9 +15,9 @@
     --font: "Doto", sans-serif;
     --mono-font: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --font-variation-settings: "ROND" 0;
-    /* mobile-first: fixed px so phones don't inherit desktop-width scaling */
-    --font-size: 16px;
-    --font-size-header: 1.5rem;
+    /* mobile-first: larger than desktop so phone text stays readable */
+    --font-size: 19px;
+    --font-size-header: 1.65rem;
     --link-hover-alpha: 0.12;
     --code-hover-alpha: 0.1;
     --pre-hover-alpha: 0.1;
