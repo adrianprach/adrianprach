@@ -61,10 +61,79 @@ const switchTheme = () => {
   applyTheme(next);
 };
 
+const initCodeBlocks = () => {
+  document.querySelectorAll("pre").forEach((pre) => {
+    if (pre.parentElement && pre.parentElement.classList.contains("code-block")) {
+      return;
+    }
+
+    const code = pre.querySelector("code");
+    let lang = "";
+    if (code && code.className) {
+      const match = code.className.match(/language-([^\s]+)/);
+      if (match) {
+        lang = match[1];
+      }
+    }
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "code-block";
+
+    const header = document.createElement("div");
+    header.className = "code-header";
+
+    const langSpan = document.createElement("span");
+    langSpan.className = "code-lang";
+    langSpan.textContent = lang || "code";
+
+    const copyBtn = document.createElement("button");
+    copyBtn.className = "code-copy-btn";
+    copyBtn.type = "button";
+    copyBtn.setAttribute("aria-label", "Copy code");
+    copyBtn.textContent = "copy";
+
+    copyBtn.addEventListener("click", async () => {
+      const textToCopy = (code ? code.innerText : pre.innerText).replace(/\n$/, "");
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        copyBtn.textContent = "copied!";
+        copyBtn.classList.add("copied");
+        setTimeout(() => {
+          copyBtn.textContent = "copy";
+          copyBtn.classList.remove("copied");
+        }, 2000);
+      } catch {
+        const textarea = document.createElement("textarea");
+        textarea.value = textToCopy;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+        copyBtn.textContent = "copied!";
+        copyBtn.classList.add("copied");
+        setTimeout(() => {
+          copyBtn.textContent = "copy";
+          copyBtn.classList.remove("copied");
+        }, 2000);
+      }
+    });
+
+    header.appendChild(langSpan);
+    header.appendChild(copyBtn);
+
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(header);
+    wrapper.appendChild(pre);
+  });
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const stored = localStorage.getItem("theme"); // "light" | "dark" | null
   applyTheme(stored);
+  initCodeBlocks();
 
   if (params.has("q") && params.get("q") === "1") {
     sessionStorage.setItem("hidden", "0");

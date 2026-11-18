@@ -13,7 +13,7 @@
     --text-dark: #95c9ff;
 
     --font: "Doto", sans-serif;
-    --mono-font: "Courier New", Courier, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    --mono-font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     --font-variation-settings: "ROND" 0;
     /* mobile-first: larger than desktop so phone text stays readable */
     --font-size: 19px;
@@ -25,6 +25,22 @@
     --code-hover-alpha-dark: 0.22;
     --pre-hover-alpha-dark: 0.14;
     --font-weight: 700;
+
+    --pre-bg: rgba(var(--color), 0.05);
+    --pre-text: var(--text);
+    --pre-border: rgba(var(--color), 0.2);
+    --pre-header-bg: rgba(var(--color), 0.08);
+    --pre-header-border: rgba(var(--color), 0.15);
+    --pre-btn-color: rgba(var(--color), 0.85);
+    --pre-btn-border: rgba(var(--color), 0.3);
+
+    --pre-bg-dark: rgba(76, 99, 119, 0.22);
+    --pre-text-dark: var(--text-dark);
+    --pre-border-dark: rgba(var(--color-dark), 0.25);
+    --pre-header-bg-dark: rgba(76, 99, 119, 0.32);
+    --pre-header-border-dark: rgba(var(--color-dark), 0.2);
+    --pre-btn-color-dark: var(--text-dark);
+    --pre-btn-border-dark: rgba(var(--color-dark), 0.35);
 }
 
 html {
@@ -77,6 +93,23 @@ a {
     --link-hover-alpha: var(--link-hover-alpha-dark);
     --code-hover-alpha: var(--code-hover-alpha-dark);
     --pre-hover-alpha: var(--pre-hover-alpha-dark);
+    --pre-bg: var(--pre-bg-dark);
+    --pre-text: var(--pre-text-dark);
+    --pre-border: var(--pre-border-dark);
+    --pre-header-bg: var(--pre-header-bg-dark);
+    --pre-header-border: var(--pre-header-border-dark);
+    --pre-btn-color: var(--pre-btn-color-dark);
+    --pre-btn-border: var(--pre-btn-border-dark);
+}
+
+.theme-light {
+    --pre-bg: rgba(var(--color), 0.05);
+    --pre-text: var(--text);
+    --pre-border: rgba(var(--color), 0.2);
+    --pre-header-bg: rgba(var(--color), 0.08);
+    --pre-header-border: rgba(var(--color), 0.15);
+    --pre-btn-color: rgba(var(--color), 0.85);
+    --pre-btn-border: rgba(var(--color), 0.3);
 }
 
 a:hover {
@@ -90,7 +123,7 @@ code:not(pre code):focus-visible {
 
 pre:hover,
 pre:focus-within {
-    background: rgba(var(--color), var(--pre-hover-alpha));
+    border-color: rgba(var(--color), 0.4);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -103,6 +136,13 @@ pre:focus-within {
         --link-hover-alpha: var(--link-hover-alpha-dark);
         --code-hover-alpha: var(--code-hover-alpha-dark);
         --pre-hover-alpha: var(--pre-hover-alpha-dark);
+        --pre-bg: var(--pre-bg-dark);
+        --pre-text: var(--pre-text-dark);
+        --pre-border: var(--pre-border-dark);
+        --pre-header-bg: var(--pre-header-bg-dark);
+        --pre-header-border: var(--pre-header-border-dark);
+        --pre-btn-color: var(--pre-btn-color-dark);
+        --pre-btn-border: var(--pre-btn-border-dark);
     }
 }
 
@@ -115,34 +155,116 @@ pre:focus-within {
 
 code:not(pre code) {
     background: rgba(var(--color), 0.1);
+    font-family: var(--mono-font);
+    font-size: 0.85em;
+    padding: 0.12em 0.35em;
+    border-radius: 3px;
 }
 
-code:not(pre code),
-pre,
+.code-block {
+    position: relative;
+    margin: 1.25em 0;
+    border-radius: 6px;
+    background: var(--pre-bg);
+    border: 1px solid var(--pre-border);
+    overflow: hidden;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.code-block:hover,
+.code-block:focus-within {
+    border-color: rgba(var(--color), 0.55);
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.35em 0.8em;
+    background: var(--pre-header-bg);
+    border-bottom: 1px solid var(--pre-header-border);
+    font-size: 0.75rem;
+    font-family: var(--mono-font);
+    color: var(--pre-btn-color);
+    user-select: none;
+}
+
+.code-lang {
+    text-transform: lowercase;
+    opacity: 0.85;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+}
+
+.code-copy-btn {
+    background: transparent;
+    color: var(--pre-btn-color);
+    border: 1px solid var(--pre-btn-border);
+    border-radius: 4px;
+    padding: 0.15em 0.6em;
+    font-size: 0.75rem;
+    font-family: var(--mono-font);
+    cursor: pointer;
+    line-height: 1.2;
+    transition: all 0.15s ease;
+    opacity: 0.75;
+}
+
+.code-block:hover .code-copy-btn,
+.code-copy-btn:focus-visible {
+    opacity: 1;
+}
+
+.code-copy-btn:hover {
+    background: rgba(var(--color), 0.12);
+    color: rgba(var(--color), 1);
+    border-color: rgba(var(--color), 0.5);
+}
+
+.code-copy-btn.copied {
+    color: rgba(var(--color), 1);
+    border-color: rgba(var(--color), 0.85);
+    background: rgba(var(--color), 0.15);
+    font-weight: 600;
+}
+
+pre {
+    background: var(--pre-bg);
+    color: var(--pre-text);
+    border: 1px solid var(--pre-border);
+    border-radius: 6px;
+    padding: 0.85em 1.1em;
+    margin: 1.25em 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: border-color 0.15s ease;
+}
+
+.code-block pre {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    padding: 0.85em 1.1em;
+}
+
 pre code {
     font-family: var(--mono-font);
-    font-size: 0.8em;
-    line-height: 1.2;
+    font-size: 0.85em;
+    line-height: 1.5;
+    color: inherit;
+    background: transparent;
+    display: block;
 }
 
-blockquote,
-pre {
+blockquote {
     background: rgba(var(--blockquote-color), 0.2);
+    border-left: 4px solid rgba(var(--color), 0.85);
+    font-style: italic;
     padding: 0 0.5em;
     margin-left: 0;
     margin-right: 0;
     text-wrap: balance;
-}
-
-pre,
-pre code {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-blockquote {
-    border-left: 4px solid rgba(var(--color), 0.85);
-    font-style: italic;
 }
 
 img {
