@@ -3,6 +3,8 @@ const site = lume();
 site.copy("assets");
 site.copy("style.css");
 site.copy("main.js");
+site.copy("availability.json");
+site.copy("availability.js");
 
 const BASE_PATH = "" as const;
 

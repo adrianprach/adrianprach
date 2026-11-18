@@ -1,0 +1,73 @@
+{
+  "name": "Adrian",
+  "timezone": "Australia/Adelaide",
+  "statusNote": "school break · weekday mornings open",
+  "contactEmail": "adrianprach@gmail.com",
+  "horizonDays": 14,
+  "states": {
+    "open": { "name": "open", "symbol": "█", "desc": "open" },
+    "deep": { "name": "lock in", "symbol": "▒", "desc": "focus" },
+    "busy": { "name": "busy", "symbol": "░", "desc": "busy" },
+    "afk": { "name": "afk", "symbol": "░", "desc": "afk" }
+  },
+  "default": {
+    "weekday": [
+      [0, 8.5, "afk"],
+      [8.5, 13, "open"],
+      [13, 17, "deep"],
+      [17, 20.5, "open"],
+      [20.5, 24, "afk"]
+    ],
+    "weekend": [
+      [0, 9.5, "afk"],
+      [9.5, 16, "open"],
+      [16, 24, "busy"]
+    ]
+  },
+  "dates": {
+    "2026-11-19": [
+      [0, 8.5, "busy"],
+      [8.5, 13, "open"],
+      [13, 15, "deep"],
+      [15, 24, "busy"]
+    ],
+    "2026-11-20": [
+      [0, 8.5, "busy"],
+      [8.5, 13, "open"],
+      [13, 15, "deep"],
+      [15, 24, "busy"]
+    ],
+    "2026-11-21": [
+      [0, 9.5, "busy"],
+      [9.5, 15, "open"],
+      [15, 24, "busy"]
+    ],
+    "2026-11-22": [
+      [0, 9.5, "busy"],
+      [9.5, 15, "open"],
+      [15, 24, "busy"]
+    ],
+    "2026-11-24": [
+      [0, 8.5, "busy"],
+      [8.5, 13, "open"],
+      [13, 16, "deep"],
+      [16, 24, "busy"]
+    ],
+    "2026-11-27": [
+      [0, 8.5, "busy"],
+      [8.5, 13, "open"],
+      [13, 16, "deep"],
+      [16, 24, "busy"]
+    ],
+    "2026-11-28": [
+      [0, 9.5, "busy"],
+      [9.5, 16, "open"],
+      [16, 24, "busy"]
+    ],
+    "2026-11-29": [
+      [0, 9.5, "busy"],
+      [9.5, 16, "open"],
+      [16, 24, "busy"]
+    ]
+  }
+}

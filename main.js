@@ -23,14 +23,13 @@ const setThemeVars = (theme) => {
   if (theme === "light") {
     root.style.setProperty("--background", "var(--background-light)");
     root.style.setProperty("--text", "#111111");
-    root.style.setProperty("--color", "10, 70, 120");
-    root.style.setProperty("--blockquote-color", "10, 70, 120");
+    root.style.setProperty("--color", "10, 37, 64");
+    root.style.setProperty("--blockquote-color", "10, 37, 64");
     root.classList.add("theme-light");
     root.classList.remove("theme-dark");
     return;
   }
 
-  // System/unset: do not set inline CSS vars so `prefers-color-scheme` can apply.
   root.style.removeProperty("--background");
   root.style.removeProperty("--text");
   root.style.removeProperty("--color");
@@ -47,14 +46,13 @@ const applyTheme = (theme) => {
     return;
   }
 
-  // "system" (or unset): let CSS `prefers-color-scheme` decide
   delete document.documentElement.dataset.theme;
   setThemeVars(null);
   setThemeButton(getSystemTheme());
 };
 
 const switchTheme = () => {
-  const stored = localStorage.getItem("theme"); // "light" | "dark" | null
+  const stored = localStorage.getItem("theme");
   const effective = stored === "light" || stored === "dark" ? stored : getSystemTheme();
   const next = effective === "dark" ? "light" : "dark";
   localStorage.setItem("theme", next);
@@ -131,7 +129,7 @@ const initCodeBlocks = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
-  const stored = localStorage.getItem("theme"); // "light" | "dark" | null
+  const stored = localStorage.getItem("theme");
   applyTheme(stored);
   initCodeBlocks();
 

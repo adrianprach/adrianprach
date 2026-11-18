@@ -12,4 +12,4 @@ around that: consultant at [MORU](https://www.tropmedres.ac) (funding tools plat
 
 before adelaide: thailand, university IT, a bioscience minor i still can’t fully explain at parties.
 
-[cv](/cv) · [projects](/projects)
+[cv](/cv) · [projects](/projects) · [availability](/availability)
