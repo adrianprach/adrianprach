@@ -7,6 +7,11 @@ layout: post.vto
 
 ## Work
 
+**Freelance Software Engineer @ smolbird** — 2025 – Present
+
+- Developing and improving internal enterprise tools: HRMS, sales order processing, and shipment tracking.
+- Full-stack development across services and web frontends.
+
 **[Software Engineer @ AlpegaTMS](https://www.alpegagroup.com/en/)** — Thailand, 2022 – Feb 2026
 
 - Feature work, fixes, and improvements across global client environments for a SaaS Transportation Management System.

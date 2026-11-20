@@ -6,10 +6,10 @@ layout: index.vto
 > adrian, broset  
 > used to ship software for money. now shipping assignments @ flinders.
 
-software engineer for a few years on [alpega](https://www.alpegagroup.com/en/)’s tms — angular, java, spring, oracle. Also the kind of stack where “legacy” is not a metaphor.
+spent a few years on [alpega](https://www.alpegagroup.com/en/)’s tms (angular, java, spring, oracle)—a codebase where “legacy” is definitely an understatement.
 
-around that: consultant at [MORU](https://www.tropmedres.ac) (funding tools platform + a small mountain of tablets), and a long volunteer run at [bibleway](https://bibleway.de/) that somehow turned into real web apps instead of just “can you fix the wordpress.”
+around that: consulting at [MORU](https://www.tropmedres.ac) (grant proposal tooling + 300-tablet MDM fleet), freelance enterprise tools with smolbird, and volunteer engineering for [bibleway](https://bibleway.de/).
 
-before adelaide: thailand, university IT, a bioscience minor i still can’t fully explain at parties.
+before adelaide: thailand, university IT, and an undergrad in IT and bioscience.
 
 [cv](/cv) · [projects](/projects) · [availability](/availability)
